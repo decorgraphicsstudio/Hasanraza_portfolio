@@ -246,7 +246,7 @@ section{
         right: -100%;
         width: 300px;
         height: 40vh;
-        background: #4d9559;
+        background: #346679;
         display: flex;
         align-items: center;
         flex-direction: column;
@@ -268,11 +268,32 @@ section{
         height: auto;
     }
 }
-@media (max-width: 420px){
+@media (max-width: 480px){
     .hero-text .cta{
         left: 15px;
     }
     .hero-text a:hover{
         transform: scale(80px);
+    }
+    .scroll-down{
+        position: fixed;
+    }
+    .hero-img img{
+        width: 275px;
+        height: auto;
+    }
+}
+@media (max-width: 402px){
+    .hero-text h1{
+        font-size: 70px;
+    }
+    .hero-text a{
+        font-size: 12px;
+    }
+    .hero-text a.ctaa{
+        font-size: 12px;
+    }
+    header{
+        top: 15px;
     }
 }
