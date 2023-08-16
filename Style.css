@@ -5,18 +5,21 @@
     list-style: none;
     text-decoration: none;
     font-family: 'Quicksand', sans-serif;
+    scroll-behavior: smooth;
 }
 header{
     position: absolute;
-    right: 0;
-    top: 30px;
     z-index: 1000;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 33px 9%;
-    background: transparent;
+    background: linear-gradient(245.59deg, #2f525f 0%, #3e6270 28.53%, #2e3639 75.52%);
+}
+.kli{
+    border-bottom: 2px solid white;
+    position: fixed;
 }
 .logo{
     font-size: 30px;
@@ -58,33 +61,48 @@ header{
 section{
     padding: 0 19%;
 }
+.span1{
+    font-size: larger;
+    font-weight: 400;
+    padding-bottom: 2px;
+    border-bottom: 3px solid transparent;
+
+    transition: .5s;
+}
+.span1:hover{
+    border-bottom: 3px solid #fff;
+}
 .hero-text h5{
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 400;
     color: white;
-    margin-bottom: 40px;
+    position: relative;
+    top: 6px;
 }
 .hero-text h1{
     font-family: 'Poiret One', cursive;
-    font-size: 100px;
-    line-height: 1;
+    font-size: 90px;
     color: white;
-    margin: 0 0 45px;
+    position: relative;
+    top: 4px;
 }
 .hero-text h4{
     font-size: 18px;
     font-weight: 600;
-    color: yellow;
-    margin-bottom: 10px;
+    color: white;
+    position: relative;
+    bottom: 6px;
 }
 .hero-text p{
+    position: relative;
+    bottom: 5px;
     color: white;
     font-size: 15px;
-    line-height: 1.9;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 .hero-img img{
     position: relative;
+    right: 15px;
     bottom: 32px;
     height: 380px;
     width: auto;
@@ -147,7 +165,7 @@ section{
     transform: scale(115%);
 }
 .scroll-down{
-    position: absolute;
+    position: fixed;
     bottom: 6%;
     right: 9%;
 }
@@ -156,7 +174,8 @@ section{
     padding: 12px;
     font-size: 25px;
     color: white;
-    background: #2e3639;
+    background: #346679;
+    border: 2px solid white;
     border-radius: 30px;
     transition: all .50s ease;
 }
@@ -171,6 +190,9 @@ section{
 .hero-text a.ctaa .download{
     position: relative;
     top: 1.5px;
+}
+.btn{
+    padding-bottom: 15px;
 }
 @media (max-width: 1535px){
     header{
@@ -217,10 +239,17 @@ section{
     .hero-text{
         padding-top: 115px;
     }
+    .hero{
+        align-content: center;
+    }
     .hero-img{
+        width: 400px;
+        height: auto;
         text-align: center;
     }
     .hero-img img{
+        position: relative;
+        top: 80px;
         height: 180px;
         width: auto;
     }
@@ -228,7 +257,13 @@ section{
         height: 100%;
         gap: 1rem;
         grid-template-columns: 1fr;
-   } 
+    }
+    .icons{
+        display: none;
+    }
+    .scroll-down{
+        display: none;
+    }
 }
 @media (max-width: 990px){
     #menu-icon{
@@ -236,6 +271,8 @@ section{
     }
     .navlist{
         position: absolute;
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 15px;
         top: 100%;
         right: -100%;
         width: 300px;
@@ -244,7 +281,7 @@ section{
         display: flex;
         align-items: center;
         flex-direction: column;
-        padding: 50px 20px;
+        padding: 12px 20px;
         transition: all .55s ease;
     }
     .navlist a{
@@ -254,6 +291,10 @@ section{
     }
     .navlist.open{
         right: 0;
+    }
+    .btn{
+        position: relative;
+        bottom: 13px;
     }
 }
 @media (max-width: 1195px){
@@ -269,12 +310,13 @@ section{
     .hero-text a:hover{
         transform: scale(80px);
     }
-    .scroll-down{
-        position: fixed;
-    }
     .hero-img img{
-        width: 275px;
+        padding-top: 20px;
+        width: 340px;
         height: auto;
+    }
+    .hero-text{
+        bottom: 110px;
     }
 }
 @media (max-width: 402px){
@@ -287,7 +329,263 @@ section{
     .hero-text a.ctaa{
         font-size: 12px;
     }
-    header{
-        top: 15px;
+}
+.serv{
+    background-image: url(BG1.png);
+    background-size: cover;
+    background-attachment: scroll;
+}
+.container{
+    position: relative;
+    top: 100px;
+    width: 100%;
+    height: 100vh;
+    padding: 0 8%;
+}
+.container h1{
+    font-size: 30px;
+    text-align: center;
+    padding-top: 10%;
+    padding-bottom: 70px;
+    font-weight: 600;
+    position: relative;
+}
+.container h1::after{
+    content: '';
+    background: #3e6270;
+    border-radius: 25px;
+    width: 100px;
+    height: 5px;
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.row{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px, 1fr));
+    grid-gap: 30px;
+}
+.servicess{
+    text-align: center;
+    padding: 25px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    color: #346679;
+    background: white;
+    transition: all 0.5s;
+}
+.servicess i{
+    font-size: 40px;
+    margin-bottom: 10px;
+    color: #346679;
+}
+.servicess h2{
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.servicess:hover{
+     background: #346679;
+     color: #fff;
+     transform: scale(1.05);
+}
+.servicess:hover i{
+    color: #fff;
+}
+.h11{
+    cursor: pointer;
+    background: linear-gradient(245.59deg, #2f525f 0%, #3e6270 28.53%);
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+}
+@media (max-width: 670px){
+    .row{
+        grid-gap: 8px;
+        position: relative;
+        bottom: 70px;
+    }
+    .h11{
+        font-size: 25px;
+        position: relative;
+        bottom: 45px;
+    }
+    .container h1::after{
+        bottom: 95px;
+    }
+    .servicess{
+        padding: 10px 7px;
+    }
+}
+.aboutme{
+    background-image: url(BG5.png);
+    background-size: cover;
+    background-attachment: scroll;
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+}
+.photo{
+    position: relative;
+    top: 310px;
+    right: 20px;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 8px solid #2e3639;
+    width: 320px;
+    height: 320px;
+}
+.photo img{
+    position: relative;
+    width: 320px;
+    height: auto;
+    transition: 0.55s;
+}
+.photo img:hover{
+    transform: scale(1.1);
+}
+.text{
+    position: relative;
+    left: 370px;
+    top: 55px;
+    width: 550px;
+    height: 200px;
+    background-color: white;
+    border-radius: 10px;
+    opacity: 0.4;
+    backdrop-filter: blur(15px);
+}
+.main-text{
+    padding: 10px;
+    color: #000;
+}
+.main-text h1{
+    padding-bottom: 10px;
+    font-size: 25px;
+    font-weight: 700;
+}
+.main-text h4{
+    padding-bottom: 7px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.main-text p{
+    font-size: 15px;
+    font-weight: 500;
+}
+@media (max-width: 960px){
+    .photo{
+        width: 270px;
+        height: 270px;
+    }
+    .photo img{
+        width: 270px;
+        height: auto;
+    }
+    .text{
+        top: 70px;
+        left: 280px;
+        width: 450px;
+    }
+}
+@media (max-width: 775px){
+    .photo{
+        top: 170px;
+        left: 20px;
+    }
+    .text{
+        left: 20px;
+        top: 200px;
+        width: 550px;
+    }
+}
+@media (max-width: 600px){
+    .text{
+        left: 10px;
+        width: 410px;
+    }
+    .photo{
+        top: 140px;
+        left: 10px;
+        height: 250;
+        width: 250;
+    }
+    .photo img{
+        height: auto;
+        width: 250;
+    }
+}
+.serv{
+    background-image: url(BG1.png);
+    background-size: cover;
+    background-attachment: scroll;
+}
+.container-port{
+    position: relative;
+    top: 100px;
+    width: 100%;
+    height: 100vh;
+    padding: 0 8%;
+}
+.container-port h1{
+    bottom: 70px;
+    font-size: 30px;
+    text-align: center;
+    padding-top: 10%;
+    padding-bottom: 70px;
+    font-weight: 600;
+    position: relative;
+}
+.container-port h1::after{
+    content: '';
+    background: #3e6270;
+    border-radius: 25px;
+    width: 100px;
+    height: 5px;
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.rows{
+    position: relative;
+    bottom: 80px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px, 1fr));
+    grid-gap: 30px;
+}
+.portfoli img{
+    border: 4px solid black;
+    width: 350px;
+    height: auto;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+.h11{
+    cursor: pointer;
+    background: linear-gradient(245.59deg, #2f525f 0%, #3e6270 28.53%);
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+}
+@media (max-width: 670px){
+    .rows{
+        grid-gap: 8px;
+        position: relative;
+        bottom: 70px;
+    }
+    .h11{
+        font-size: 25px;
+        position: relative;
+        bottom: 45px;
+    }
+    .container-port h1::after{
+        bottom: 95px;
+    }
+    .portfoli{
+        padding: 10px 7px;
     }
 }
