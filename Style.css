@@ -51,7 +51,8 @@ header{
     height: 100%;
     width: 100%;
     min-height: 100vh;
-    background: linear-gradient(245.59deg, #2f525f 0%, #3e6270 28.53%, #2e3639 75.52%);
+    /* background: linear-gradient(245.59deg, #2f525f 0%, #3e6270 28.53%, #2e3639 75.52%);
+    background-attachment: scroll; */
     position: relative;
     display: grid;
     grid-template-columns: repeat(2,1fr);
@@ -60,6 +61,10 @@ header{
 }
 section{
     padding: 0 19%;
+    background-image: url(BG5.png);
+    background-attachment: scroll;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 .span1{
     font-size: larger;
@@ -331,7 +336,6 @@ section{
     }
 }
 .serv{
-    background-image: url(BG1.png);
     background-size: cover;
     background-attachment: scroll;
 }
@@ -419,7 +423,7 @@ section{
     }
 }
 .aboutme{
-    background-image: url(BG5.png);
+    /* background-image: url(BG5.png); */
     background-size: cover;
     background-attachment: scroll;
     height: 100%;
@@ -517,20 +521,24 @@ section{
         width: 250;
     }
 }
+@media (max-width: 437px){
+    .text{
+        width: 330px;
+    }
+}
 .serv{
-    background-image: url(BG1.png);
+    /* background-image: url(BG1.png); */
     background-size: cover;
     background-attachment: scroll;
 }
-.container-port{
+.container{
     position: relative;
     top: 100px;
     width: 100%;
     height: 100vh;
     padding: 0 8%;
 }
-.container-port h1{
-    bottom: 70px;
+.container h1{
     font-size: 30px;
     text-align: center;
     padding-top: 10%;
@@ -538,7 +546,7 @@ section{
     font-weight: 600;
     position: relative;
 }
-.container-port h1::after{
+.container h1::after{
     content: '';
     background: #3e6270;
     border-radius: 25px;
@@ -549,20 +557,37 @@ section{
     left: 50%;
     transform: translateX(-50%);
 }
-.rows{
-    position: relative;
-    bottom: 80px;
+.row{
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(250px, 1fr));
     grid-gap: 30px;
 }
-.portfoli img{
-    border: 4px solid black;
-    width: 350px;
-    height: auto;
-    border-radius: 10px;
+.servicess{
+    text-align: center;
+    padding: 25px 10px;
+    border-radius: 5px;
+    font-size: 14px;
     cursor: pointer;
+    color: #346679;
+    background: white;
     transition: all 0.5s;
+}
+.servicess i{
+    font-size: 40px;
+    margin-bottom: 10px;
+    color: #346679;
+}
+.servicess h2{
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.servicess:hover{
+     background: #346679;
+     color: #fff;
+     transform: scale(1.05);
+}
+.servicess:hover i{
+    color: #fff;
 }
 .h11{
     cursor: pointer;
@@ -572,7 +597,7 @@ section{
     border-radius: 10px;
 }
 @media (max-width: 670px){
-    .rows{
+    .row{
         grid-gap: 8px;
         position: relative;
         bottom: 70px;
@@ -582,10 +607,57 @@ section{
         position: relative;
         bottom: 45px;
     }
-    .container-port h1::after{
+    .container h1::after{
         bottom: 95px;
     }
-    .portfoli{
+    .servicess{
         padding: 10px 7px;
     }
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+}
+.my-form{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+form{
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 2vw 4vw;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 10px;
+}
+form h3{
+    color: #3e6270;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+form input,form textarea{
+    border: 0;
+    margin: 10px 0;
+    padding: 20px;
+    outline: none;
+    background: #f5f5f5;
+    font-size: 16px;
+}
+form button{
+    padding: 15px;
+    background: #2e3639;
+    color: #fff;
+    font-size: 18px;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    width: 150px;
+    margin: 20px auto 0;
+    border-radius: 30px;
 }
