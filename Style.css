@@ -83,6 +83,7 @@ section{
     color: white;
     position: relative;
     top: 6px;
+    padding-bottom: 10px
 }
 .hero-text h1{
     font-family: 'Poiret One', cursive;
